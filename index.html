@@ -1,304 +1,125 @@
-<!DOCTYPE HTML>
-<html style="height: 100%;" lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <!-- Created using Storyline 360 - http://www.articulate.com  -->
-    <!-- version: 3.17.16188.0 -->
+	<title>Mandated Reporter Training</title>
+	
+	 <script>
+		var g_strLink;
+	
+		function buildLaunchLink()
+		{
+			var g_strProjectId = "6hQCIoM9ZJU";
+			var strHash = document.location.hash;
+			document.location.hash = "";
 
-    <title>Mandated Reporter Training</title>
-    <style>
-        body {
-            background: #ffffff;
-            overflow: hidden;
-        }
+			var strPath = window.location.protocol + "//" + window.location.host;
+			var arrPath = window.location.pathname.split("/");
 
-        html, body, table {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
+			arrPath.length = arrPath.length - 1;
+			strPath += arrPath.join("/");
+			strPath = strPath.replace(/ /g, "%20");
 
-        table td {
-            vertical-align: middle;
-            text-align: center;
-        }
+			g_strLink = "path=" + strPath;
+			g_strLink += "&projectid=" + g_strProjectId;
+			
+			var strQuery = strHash.substr(1);
+			g_strLink += "&" + decodeURIComponent(strQuery);
+			g_strLink = escape(g_strLink);
+		}
+		
+		function isAndroid()
+		{
+			return (navigator.userAgent.indexOf("Android") > -1);
+		}
+		
+		function isIOS()
+		{
+			return (navigator.userAgent.indexOf("AppleWebKit/") > -1 && navigator.userAgent.indexOf("Mobile/") > -1);
+		}
 
-        #nosupport {
-            background: #f5f5f5;
-            margin: 50px 65px;
-            border: 1px solid #d5d5d5;
-            width: calc(100% - 130px);
-            height: calc(100% - 100px);
-        }
+		function UpdateLaunchUrl()
+		{
+			var strLink = (isAndroid()) ? "intent://?" + g_strLink + "#Intent;scheme=artmobileplayer;package=air.com.articulate.articulatemobileplayer;end" :
+										 "artmobileplayer://?" + g_strLink;
+										
+			var linkTarget = document.getElementById('launch');
+			linkTarget.href = strLink;
+			
+			if (isAndroid())
+			{
+				window.location = strLink;
+			}
+		}
+		
+		function writeMeta()
+		{
+			var meta = document.createElement('meta');
+			meta.name = "apple-itunes-app";
+			meta.content = "app-id=505546381, app-argument=artmobileplayer://?" + g_strLink;
+			document.getElementsByTagName('head')[0].appendChild(meta);
+		}
+		
+		buildLaunchLink();
+		writeMeta();
 
-        p {
-            font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-            font-size: 12pt;
-            color: #303030;
-        }
+	 </script>
 
-        a {
-            color: #2D9DDA;
-            text-decoration: none !important;
-        }
+	<!-- META -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    </style>
-    <script>
-        var html5Supported = true;
+	<style>
+		html,body,div,h1,p,a{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}
+		a img{border:0; width: 290px}
+		body{font-family:Helvetica,Arial,Verdana,sans-serif;line-height:1.5;color:#434750;background:#737d85;position:relative;font-size:75%}
+		h1{font-size:3em;line-height:1;margin-bottom:.5em;font-weight:400;color:#434750}
+		a,a:focus,a:hover{color:#434750;text-decoration:none;outline:0}
+		.button{float:left;font-size:14px;font-weight:700;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.75);padding:5px 22px 0;height:25px;border:1px solid #010101;-webkit-box-shadow:0 1px 0 rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.25);-webkit-border-radius:5px;background:-webkit-gradient(linear,left top,left bottom,from(#5d636b),to(#25272a),color-stop(.5,#494e54),color-stop(.51,#35393d))}
+		body.launch{background:url(mobile/linen_background.jpg) repeat}
+		div.container{background:#fff;height:490px;margin:45px;padding:30px;-webkit-border-radius:5px;-webkit-box-shadow:0 0 20px rgba(0,0,0,.75)}
+		div.screenshot{float:right;width:390px;padding-left:20px;padding-bottom:10px}
+		div.screenshot img{-webkit-box-shadow:0 8px 6px -2px rgba(0,0,0,.2); width: 360px;}
+		div.container div.launch_meta{float:left;width:450px}
+		div.container h1{color:#3c4046;font-weight:700;font-size:25px;line-height:1.2em;font-family:'Helvetica Neue',Helvetica,Arial}
+		div.container p{font-size:16px;line-height:1.4em;font-family:'Helvetica Neue',Helvetica,Arial;margin:0 0 1.4em}
+		div.container a.button{font-size:20px;color:#fff;background:#0272ed;text-shadow:0 1px 0 rgba(11,62,180,1);padding:5px 22px 12px;border:1px solid #0b3eb4;-webkit-box-shadow:0 1px 0 rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.25);-webkit-border-radius:5px;background:-webkit-gradient(linear,left top,left bottom,from(#039ef4),to(#0b3eb4))}
+		div.mobile_app{background:url(mobile/mobile_icon.png) no-repeat;padding-left:148px;padding-top:20px}
+		div.mobile_app h1{margin:0;line-height:1.4em}
+		div.mobile_app a{color:#027fef;text-decoration:underline}
+		div.container a.app_store{width:172px;height:54px;text-indent:-9000px;display:block;background:url(mobile/app_store.png)}
+		@media only screen and (max-device-width:1024px) and (orientation:portrait){
+			div.container{height:750px}
+			div.screenshot{width:290px}
+			div.screenshot img{width:290px}
+			div.container div.launch_meta{float:left;width:300px}
+			div.mobile_app h1{font-size:24px}
+		}
+		a.install { display:inline-block; overflow:hidden; background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat; width:165px; height:40px; position: relative; bottom: 120px; float:right; padding-right:50px;}
 
-    </script>
-    <!--[if lte IE 9]><script>html5Supported = false;</script><![endif]-->
-
-    <script type="text/javascript">
-
-        function routePlayer() {
-
-            var settings = {
-                lmsEnabled: false,
-                tincanEnabled: false,
-                aoEnabled: false,
-                runtimeOrder: [{"type":"html5","url":"story_html5.html"},{"type":"flash","url":"story_flash.html"}],
-                warnOnCommitFail: false
-            };
-
-            var PARAM_WARN_ON_COMMIT = {name: 'warncommit', value: 1},
-                    PARAM_LMS = {name: 'lms', value: 1},
-                    PARAM_TINCAN = {name: 'tincan', value: true},
-                    PARAM_AO = {name: 'aosupport', value: true};
-
-            var detection = {
-                agent: navigator.userAgent,
-
-                flashEnabled: function() {
-                    var description, version, flashAX,
-                            plugin = navigator.plugins["Shockwave Flash"];
-
-                    if (plugin != null) {
-                        description = plugin.description.split(" ");
-                        version = Number(description[description.length - 2]);
-
-                        return (version >= 10) || isNaN(version);
-                    } else {
-                        try {
-                            flashAX = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.10");
-                            return (flashAX != null);
-                        } catch (e) {
-                        }
-                    }
-
-                    return false;
-                },
-				
-                isFlashWaiting: function() {
-                    var html = '',
-                    divFlash = document.getElementById('flashCheck'),
-                    player;
-
-                    html += '<object width="100px" height="100px" id="player" type="application/x-shockwave-flash">';
-                    html += '<param name="name" value="player" />';
-                    html += '<param name="wmode" value="opaque" />';
-                    html += '<param name="allowScriptAccess" value="always" />';
-                    html += '</object>';
-
-                    divFlash.innerHTML = html;
-                    player = document.getElementById('player');
-
-                    return player != null && player.getBoundingClientRect().width > 0;
-                },
-
-                html5Enabled: function() {
-                    return html5Supported;
-                },
-
-                ampEnabled: function() {
-                    return ((this.isIOS() && this.isIPad()) || this.isAndroid());
-                },
-
-                isIOS: function() {
-                    return (this.agent.indexOf("AppleWebKit/") > -1 && this.agent.indexOf("Mobile/") > -1)
-                },
-
-                isAndroid: function() {
-                    return (this.agent.indexOf("Android") > -1);
-                },
-
-                isIPad: function() {
-                    return (this.agent.indexOf("iPad") > -1);
-                },
-
-                isEdge: function() {
-                    var hasGlCapability = (function() {
-                        var canv = document.createElement('canvas'),
-                            gl = canv.getContext('webgl') || canv.getContext('experimental-webgl');
-                        canv = null;
-                        return gl != null;
-                    }());
-                    return window.MSBlobBuilder != null && window.msCrypto == null && hasGlCapability;
-                }
-            };
-
-            var router = {
-
-                init: function() {
-                    var i, url, launchInfo,
-                        redirected = false,
-                        order = settings.runtimeOrder,
-                        launchMap = {
-                            flash: {
-                                isEnabled: 'flashEnabled',
-                                getParams: 'getFlashParams',
-                                delim: '?'
-                            },
-                            html5: {
-                                isEnabled: 'html5Enabled',
-                                getParams: 'getHtml5Params',
-                                delim: '?'
-                            },
-                            amp: {
-                                isEnabled: 'ampEnabled',
-                                getParams: 'getAmpParams',
-                                delim: '#'
-                            }
-                        };
-
-                    if (document.location.search.toLowerCase().indexOf('forceflash') != -1) {
-                        this.moveFlashToStartOfOrder(order);
-                    }
-
-                    for (i = 0; i < order.length; i++) {
-                        launchInfo = launchMap[order[i].type];
-                        url = order[i].url;
-
-                        if (detection[launchInfo.isEnabled]()) {
-                            this.redirect(url, this[launchInfo.getParams](), launchInfo.delim);
-                            redirected = true;
-                            break;
-                        }
-                    }
-
-                    if (!redirected) {
-                        if (
-                            detection.isEdge() &&
-                            order[0].type === 'flash' &&
-                            detection.isFlashWaiting()
-                        ) {
-                            launchInfo = launchMap[order[0].type];
-                            url = order[0].url;
-                            this.redirect(url, this[launchInfo.getParams](), launchInfo.delim);
-                        } else {
-                            document.getElementById('nosupport').style.visibility = 'visible';
-                        }
-                    }
-                },
-
-                moveFlashToStartOfOrder: function (order) {
-                    var i,
-                        flashIndex = -1;
-                    for (i = 0; i < order.length; i++) {
-                        if (order[i].type == "flash") {
-                            flashIndex = i;
-                            break;
-                        }
-                    }
-                    if (flashIndex != -1) {
-                        order.splice(0, 0, order.splice(flashIndex, 1)[0]);
-                    }
-                },
-
-                getQueryString: function (params) {
-                    params = params || [];
-                    var i,
-                            queryString = document.location.search.substr(1),
-                            paramArr = queryString.length > 0 ? queryString.split('&') : [];
-
-                    for (i = 0; i < params.length; i++) {
-                        paramArr.push([params[i].name, params[i].value].join('='));
-                    }
-
-                    return paramArr.join('&');
-                },
-
-                formatUrl: function (url, params, delim) {
-                    delim = delim || '?';
-
-                    var queryString = this.getQueryString(params);
-
-                    if (queryString != null && queryString.length > 0) {
-                        return [url, queryString].join(delim);
-                    }
-
-                    return url;
-                },
-
-                redirect: function (url, params, delim) {
-                    window.location.replace(this.formatUrl(url, params, delim));
-                },
-
-                getFlashParams: function () {
-                    return [];
-                },
-
-                getHtml5Params: function () {
-                    var params = [];
-                    if (settings.tincanEnabled) {
-                        params.push(PARAM_TINCAN);
-                    } else if (settings.lmsEnabled) {
-                        params.push(PARAM_LMS);
-                        if (settings.warnOnCommitFail) {
-                            params.push(PARAM_WARN_ON_COMMIT);
-                        }
-                    }
-
-                    return params;
-                },
-
-                getAmpParams: function () {
-                    var tincanProto = settings.aoEnabled || settings.tincanEnabled,
-                            params = [];
-                    // build AMP params
-                    if (tincanProto) {
-                        params.push(PARAM_TINCAN);
-                        if (settings.aoEnabled) {
-                            params.push(PARAM_AO);
-                        }
-                    }
-                    return params;
-                }
-            };
-
-            router.init();
-        };
-
-    </script>
+	</style>
 </head>
-<body onload="routePlayer()" style="height: 100%;">
-<div id="nosupport" style="visibility: hidden;">
-    <table>
-        <tr>
-            <td>
-                <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90.2" height="74.9" viewBox="0 0 90 75" version="1.1">
-                        <g transform="scale(.1)">
-                            <path d="m409 7c54-25 106 20 130 66 106 170 213 340 320 510 17 28 32 63 19 96-14 36-55 51-91 51-224 1-448 0-672 0-35 1-76-3-100-33-26-32-15-77 5-108 107-173 216-344 324-517 16-26 35-53 65-65z"
-                                  fill="#4c4c4c"></path>
-                            <path d="m419 57c26-20 55 4 68 27 109 174 218 348 328 522 9 17 23 35 17 55-11 20-36 18-55 19-224 0-447 0-670 0-20-1-46 1-57-19-5-18 6-34 14-48 109-174 218-348 327-522 9-12 17-25 28-34z"
-                                  fill="#f5f5f5"></path>
-                            <path d="m429 179c25-12 58 8 56 35-1 81-5 161-10 242 2 32-49 39-57 9-7-73-6-146-11-219-1-24-4-56 22-67zM430 539 430 539 430 539c45-24 80 53 32 72-45 24-80-53-32-72z"
-                                  fill="#4c4c4c"></path>
-                        </g>
-                    </svg>
-                </p>
-                <p>This course cannot be played.</p>
-                <p><a href="https://ipc.articulate.com/slw/360/en/cannotplay/">Learn More</a></p>
+	
+<body class="launch" onload="UpdateLaunchUrl()">
 
-            </td>
-        </tr>
-    </table>
-</div>
-<div id="flashCheck" style="visibility: hidden" >
-</div>
+	<div class="wrap">
+	
+		<div class="container">
+			<div class="launch_meta">
+				<h1>Mandated Reporter Training</h1>
+				<p>Training for professionals reporting child abuse and neglect. </p>
+				<a id="launch" href="#" class="button" target="_top">Launch</a>
+			</div>
+			<div class="screenshot">
+				<img src="story_content/thumbnail.jpg"  />
+			</div>
+		</div>
+		<script>
+			if (isIOS())
+			{
+				document.write("<a class='install' href='https://geo.itunes.apple.com/us/app/articulate-mobile-player/id505546381?mt=8' ></a>");
+			}
+		</script>
+	</div>
 </body>
+
 </html>
